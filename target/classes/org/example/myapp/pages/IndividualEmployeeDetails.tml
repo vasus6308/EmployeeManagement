@@ -1,0 +1,21 @@
+<!-- IndividualEmployeeDetailPage.tml -->
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <title>Employee Details</title>
+    <style>
+        /* Style for the heading */
+        h2 {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Individual Employee Details</h2>
+    <div>
+        <p><strong>Name:</strong> ${employee.name}</p>
+        <p><strong>Age:</strong> ${employee.age}</p>
+        <p><strong>Address:</strong> ${employee.address}</p>
+    </div>
+</body>
+</html>

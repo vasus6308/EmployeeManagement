@@ -1,0 +1,85 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<head>
+    <title>Add Employee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            background-image: url('images/andrej-lisakov-V2OyJtFqEtY-unsplash.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input[type="text"] {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .success-message {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+ <t:companyinfo/>
+    <div class="container">
+        <h2>Add Employee</h2>
+        <t:form t:id="addEmployeeForm">
+            <t:errors t:source="validationTracker"/>
+            <label for="name">Name:</label>
+            <t:textfield t:id="name"/>
+
+            <label for="age">Age:</label>
+            <t:textfield t:id="age"/>
+
+            <label for="address">Address:</label>
+            <t:textfield t:id="address"/>
+
+            <input type="submit" value="Save"/>
+        </t:form>
+
+        <t:if test="savedSuccessfully">
+            <div class="success-message">
+                Employee saved successfully!
+            </div>
+        </t:if>
+    </div>
+</body>
+</html>

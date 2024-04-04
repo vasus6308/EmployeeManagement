@@ -1,0 +1,6 @@
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+    <div class="company-info">
+        <h1>${companyName}</h1>
+        <p>${companyAddress}</p>
+    </div>
+</t:container>

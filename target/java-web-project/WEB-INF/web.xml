@@ -1,0 +1,39 @@
+<web-app>
+  <display-name>My Tapestry Application</display-name>
+
+  <!-- Context parameters -->
+  <context-param>
+    <param-name>tapestry.app-package</param-name>
+    <param-value>org.example.myapp</param-value>
+  </context-param>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext.xml</param-value>
+  </context-param>
+
+  <!-- Tapestry filter -->
+  <filter>
+    <filter-name>MyApp</filter-name>
+    <filter-class>org.apache.tapestry5.TapestryFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>MyApp</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <!-- Spring listener -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+  <!-- Hibernate Open Session In View Filter -->
+  <filter>
+    <filter-name>hibernateFilter</filter-name>
+    <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>hibernateFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+</web-app>

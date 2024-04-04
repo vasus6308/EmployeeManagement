@@ -1,0 +1,27 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+      xmlns:p="tapestry:parameter" xmlns:j="tapestry-library:jquery">
+<head>
+    <title>Employee Details</title>
+    <style>
+        /* Style for the heading */
+        h2 {
+            text-align: center;
+            font-weight: bold;
+        }
+        body {
+         background-image: url('images/brando-makes-branding-EYGFG3thfAo-unsplash.jpg');
+         background-size: cover;
+         background-position: center;
+                }
+    </style>
+</head>
+<body>
+ <t:companyinfo/>
+
+    <h2>Employee Details</h2>
+    <t:grid source="employeeList" row="currentEmployee">
+        <p:idCell> <t:pageLink page="IndividualEmployeeDetails" context="currentEmployee.id">${currentEmployee.id}</t:pageLink></p:idCell>
+
+    </t:grid>
+</body>
+</html>
